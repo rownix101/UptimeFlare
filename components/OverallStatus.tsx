@@ -1,5 +1,5 @@
 import { MaintenanceConfig, MonitorTarget } from '@/types/config'
-import { Center, Container, Title, Collapse, Button, Box } from '@mantine/core'
+import { Center, Container, Title, Collapse, Card } from '@mantine/core'
 import { IconCircleCheck, IconAlertCircle, IconPlus, IconMinus } from '@tabler/icons-react'
 import { useEffect, useState } from 'react'
 import MaintenanceAlert from './MaintenanceAlert'
@@ -87,21 +87,23 @@ export default function OverallStatus({
 
   return (
     <Container size="md" mt="xl">
-      <Center>{icon}</Center>
-      <Title mt="sm" style={{ textAlign: 'center' }} order={1}>
-        {statusString}
-      </Title>
-      <Title mt="sm" style={{ textAlign: 'center', color: 'var(--uf-muted)' }} order={5}>
-        {t('Last updated on', {
-          date: new Date(state.lastUpdate * 1000).toLocaleString(),
-          seconds: currentTime - state.lastUpdate,
-        })}
-      </Title>
+      <Card className="status-hero" padding="xl" radius="lg">
+        <Center>{icon}</Center>
+        <Title mt="sm" style={{ textAlign: 'center' }} order={1}>
+          {statusString}
+        </Title>
+        <Title mt="sm" className="status-subtitle" style={{ textAlign: 'center' }} order={5}>
+          {t('Last updated on', {
+            date: new Date(state.lastUpdate * 1000).toLocaleString(),
+            seconds: currentTime - state.lastUpdate,
+          })}
+        </Title>
+      </Card>
 
       {/* Upcoming Maintenance */}
       {upcomingMaintenances.length > 0 && (
         <>
-          <Title mt="4px" style={{ textAlign: 'center', color: 'var(--uf-muted)' }} order={5}>
+          <Title mt="4px" className="status-subtitle" style={{ textAlign: 'center' }} order={5}>
             {t('upcoming maintenance', { count: upcomingMaintenances.length })}{' '}
             <span
               style={{ textDecoration: 'underline', cursor: 'pointer' }}

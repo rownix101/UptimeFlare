@@ -21,6 +21,7 @@ export default function MaintenanceAlert({
   return (
     <Alert
       icon={<IconAlertTriangle />}
+      className="uf-maintenance-alert"
       title={
         <span
           style={{

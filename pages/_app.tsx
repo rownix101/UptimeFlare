@@ -36,7 +36,7 @@ const theme = {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <NoSsr>
-      <MantineProvider defaultColorScheme="auto" theme={theme}>
+      <MantineProvider defaultColorScheme="dark" theme={theme}>
         <Component {...pageProps} />
       </MantineProvider>
     </NoSsr>

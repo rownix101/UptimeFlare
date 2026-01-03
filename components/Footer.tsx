@@ -8,7 +8,10 @@ export default function Footer() {
   return (
     <>
       <Divider mt="lg" />
-      <div dangerouslySetInnerHTML={{ __html: pageConfig.customFooter ?? defaultFooter }} />
+      <footer
+        className="site-footer"
+        dangerouslySetInnerHTML={{ __html: pageConfig.customFooter ?? defaultFooter }}
+      />
     </>
   )
 }

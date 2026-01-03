@@ -61,6 +61,7 @@ export default function MonitorList({
         variant="contained"
         value={expandedGroups}
         onChange={(values) => setExpandedGroups(values)}
+        className="monitor-accordion"
       >
         {Object.keys(group).map((groupName) => (
           <Accordion.Item key={groupName} value={groupName}>
@@ -119,12 +120,12 @@ export default function MonitorList({
       <Card
         shadow="sm"
         padding="lg"
-        radius="md"
+        radius="lg"
         ml="md"
         mr="md"
         mt="xl"
-        withBorder={!groupedMonitor}
-        style={{ width: groupedMonitor ? '897px' : '865px' }}
+        withBorder={false}
+        className="monitor-card"
       >
         {content}
       </Card>
