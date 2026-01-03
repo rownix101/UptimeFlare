@@ -34,9 +34,9 @@ const workerConfig: WorkerConfig = {
       id: 'rownix_xget',
       name: 'Rownix Xget',
       method: 'GET',
-      target:
-        'https://get.rownix.dev/gh/rownix101/UptimeFlare/raw/refs/heads/main/uptime.config.ts',
+      target: 'https://get.rownix.dev/',
       statusPageLink: 'https://get.rownix.dev',
+      expectedCodes: [404],
     },
   ],
   // [Optional] Notification settings
