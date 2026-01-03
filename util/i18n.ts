@@ -19,7 +19,8 @@ i18n
       escapeValue: false,
     },
     detection: {
-      order: ['navigator'],
+      order: ['cookie', 'navigator'],
+      caches: ['cookie'],
     },
   })
 

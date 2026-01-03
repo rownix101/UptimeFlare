@@ -1,0 +1,50 @@
+:root {
+  --uf-background: #ffffff;
+  --uf-foreground: #0a0a0a;
+  --uf-muted: #6b7280;
+  --uf-border: #e5e7eb;
+  --uf-card: #ffffff;
+  --uf-header: #e5e7eb;
+  --uf-primary: #2563eb;
+  --uf-primary-contrast: #ffffff;
+}
+
+[data-mantine-color-scheme='dark'] {
+  --uf-background: #1c1c1c;
+  --uf-foreground: #f5f5f5;
+  --uf-muted: #9ca3af;
+  --uf-border: #2f2f2f;
+  --uf-card: #1f1f1f;
+  --uf-header: #0b0b0b;
+  --uf-primary: #3b82f6;
+  --uf-primary-contrast: #0a0a0a;
+}
+
+html,
+body {
+  background: var(--uf-background);
+  color: var(--uf-foreground);
+}
+
+body {
+  min-height: 100vh;
+  background-image:
+    radial-gradient(900px 420px at 12% -10%, rgba(37, 99, 235, 0.14), transparent 60%),
+    radial-gradient(700px 360px at 110% 0%, rgba(14, 165, 233, 0.08), transparent 55%);
+  background-attachment: fixed;
+}
+
+[data-mantine-color-scheme='dark'] body {
+  background-image:
+    radial-gradient(900px 420px at 12% -10%, rgba(59, 130, 246, 0.16), transparent 60%),
+    radial-gradient(700px 360px at 110% 0%, rgba(14, 165, 233, 0.1), transparent 55%);
+}
+
+a {
+  color: var(--uf-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

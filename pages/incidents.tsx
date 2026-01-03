@@ -1,6 +1,5 @@
 import Head from 'next/head'
 
-import { Inter } from 'next/font/google'
 import { MaintenanceConfig, MonitorTarget } from '@/types/config'
 import { maintenances, pageConfig, workerConfig } from '@/uptime.config'
 import { Box, Button, Center, Container, Group, Select } from '@mantine/core'
@@ -9,9 +8,9 @@ import { useEffect, useState } from 'react'
 import MaintenanceAlert from '@/components/MaintenanceAlert'
 import NoIncidentsAlert from '@/components/NoIncidents'
 import { useTranslation } from 'react-i18next'
+import { geistSans } from '@/util/fonts'
 
 export const runtime = 'experimental-edge'
-const inter = Inter({ subsets: ['latin'] })
 
 function getSelectedMonth() {
   const hash = window.location.hash.replace('#', '')
@@ -85,7 +84,7 @@ export default function IncidentsPage() {
         <link rel="icon" href={pageConfig.favicon ?? '/favicon.png'} />
       </Head>
 
-      <main className={inter.className}>
+      <main className={geistSans.className}>
         <Center>
           <Container size="md" style={{ width: '100%' }}>
             <Group justify="end" mb="md">

@@ -24,4 +24,25 @@ export async function middleware(request: NextRequest) {
       )
     }
   }
+
+  const { pathname } = request.nextUrl
+  let response: NextResponse
+
+  if (pathname === '/en' || pathname.startsWith('/en/')) {
+    const url = request.nextUrl.clone()
+    url.pathname = pathname.replace(/^\/en(\/|$)/, '/')
+    response = NextResponse.rewrite(url)
+    response.cookies.set('i18next', 'en', { path: '/' })
+    return response
+  }
+
+  if (pathname === '/zh-cn' || pathname.startsWith('/zh-cn/')) {
+    const url = request.nextUrl.clone()
+    url.pathname = pathname.replace(/^\/zh-cn(\/|$)/, '/')
+    response = NextResponse.rewrite(url)
+    response.cookies.set('i18next', 'zh-CN', { path: '/' })
+    return response
+  }
+
+  return NextResponse.next()
 }
