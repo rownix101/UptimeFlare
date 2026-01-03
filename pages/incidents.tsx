@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { MaintenanceConfig, MonitorTarget } from '@/types/config'
 import { maintenances, pageConfig, workerConfig } from '@/uptime.config'
-import Header from '@/components/Header'
 import { Box, Button, Center, Container, Group, Select } from '@mantine/core'
 import Footer from '@/components/Footer'
 import { useEffect, useState } from 'react'
@@ -87,11 +86,6 @@ export default function IncidentsPage() {
       </Head>
 
       <main className={inter.className}>
-        <Header
-          style={{
-            marginBottom: '40px',
-          }}
-        />
         <Center>
           <Container size="md" style={{ width: '100%' }}>
             <Group justify="end" mb="md">

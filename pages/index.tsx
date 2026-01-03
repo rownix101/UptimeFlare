@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google'
 import { MonitorTarget } from '@/types/config'
 import { maintenances, pageConfig, workerConfig } from '@/uptime.config'
 import OverallStatus from '@/components/OverallStatus'
-import Header from '@/components/Header'
 import MonitorList from '@/components/MonitorList'
 import { Center, Text } from '@mantine/core'
 import MonitorDetail from '@/components/MonitorDetail'
@@ -49,8 +48,6 @@ export default function Home({
       </Head>
 
       <main className={inter.className}>
-        <Header />
-
         {state.lastUpdate === 0 ? (
           <Center>
             <Text fw={700}>{t('Monitor State not defined')}</Text>
