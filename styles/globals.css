@@ -4,6 +4,7 @@
   --uf-muted: #6b7280;
   --uf-border: rgba(15, 23, 42, 0.12);
   --uf-card: #ffffff;
+  --uf-card-glass: rgba(255, 255, 255, 0.72);
   --uf-card-strong: #f8fafc;
   --uf-header: #e5e7eb;
   --uf-primary: #2563eb;
@@ -17,6 +18,7 @@
   --uf-muted: #a1a1aa;
   --uf-border: rgba(255, 255, 255, 0.08);
   --uf-card: #1c1d20;
+  --uf-card-glass: rgba(28, 29, 32, 0.72);
   --uf-card-strong: #16181b;
   --uf-header: #0b0b0b;
   --uf-primary: #3b82f6;
@@ -33,28 +35,6 @@ body {
 body {
   min-height: 100vh;
   background-color: var(--uf-background);
-  background-image:
-    radial-gradient(860px 420px at 12% -10%, rgba(37, 99, 235, 0.18), transparent 60%),
-    radial-gradient(700px 360px at 110% 0%, rgba(14, 165, 233, 0.12), transparent 55%),
-    radial-gradient(520px 380px at 40% 110%, rgba(15, 23, 42, 0.12), transparent 60%);
-  background-attachment: fixed;
-}
-
-[data-mantine-color-scheme='dark'] body {
-  background-image:
-    radial-gradient(900px 420px at 12% -10%, rgba(59, 130, 246, 0.28), transparent 60%),
-    radial-gradient(700px 360px at 110% 0%, rgba(14, 165, 233, 0.16), transparent 55%),
-    radial-gradient(520px 380px at 40% 110%, rgba(2, 6, 23, 0.7), transparent 65%);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.03), transparent 60%);
-  opacity: 0.6;
-  pointer-events: none;
-  z-index: 0;
 }
 
 main {
@@ -67,12 +47,11 @@ main {
 .status-hero,
 .monitor-card,
 .uf-maintenance-alert {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%),
-    var(--uf-card);
+  background: var(--uf-card-glass);
   border: 1px solid var(--uf-border);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .status-hero {
